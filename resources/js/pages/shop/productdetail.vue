@@ -1,122 +1,228 @@
 <template>
   <div class="container">
-    <h1>ข้อมูลสินค้า</h1>
-
-    <div class="row">
-      <div class="col-md-8">
-        <div class="product-card-detail">
-          <img :src="product.image_url" class="myimg" />
+    <div class="container mt-5">
+      <div class="row mt-3">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <img class="mydetailimg border myshadow" :src="product.image_url" />
+          <carousel
+            class="text-center mt-2"
+            :paginationEnabled="false"
+            :perPageCustom="[
+              [480, 1],
+              [768, 2],
+              [960, 4],
+            ]"
+          >
+            <slide class="me-2">
+              <img src="/images/img4.jpeg" class="img-fluid myimgdt myshadow" />
+            </slide>
+            <slide class="me-2">
+              <img src="/images/img5.jpeg" class="img-fluid myimgdt myshadow" />
+            </slide>
+            <slide class="me-2">
+              <img src="/images/img3.jpeg" class="img-fluid myimgdt myshadow" />
+            </slide>
+            <slide class="me-2">
+              <img src="/images/img1.png" class="img-fluid myimgdt myshadow" />
+            </slide>
+          </carousel>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-lg-5 col-md-12 col-sm-12">
+          <h4 class="mt-3">ชื่อ: {{ product.title }}</h4>
+          <div class="row mt-3">
+            <div class="col-lg-3">
+              <h5>สถานะ:</h5>
+            </div>
+            <div class="col-lg-9">
+              <h5 style="color: green">มีสินค้า</h5>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-3">
+              <h5>ชนิดสินค้า:</h5>
+            </div>
+            <div class="col-lg-9">
+              <h5 class="text-gray">{{ product.category.name }}</h5>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-3">
+              <h5>รายละเอียด:</h5>
+            </div>
+          </div>
+          <h6 class="mt-3 text-gray">
+            {{ product.description }}
+          </h6>
+          <h1 class="mt-5" style="color: red">฿120.00</h1>
+          <div class="mt-5">
+            <button type="button" class="btn btn-outline-dark w-100 mbtn">
+              เพิ่มลงตระกร้ารถเข็น
+            </button>
+            <button type="button" class="btn btn-dark w-100 mbtn">
+              ซื้อเลย
+            </button>
+          </div>
+        </div>
+        <div class="row"></div>
+      </div>
+    </div>
+    <div class="clearfix mt-5">
+      <div class="float-start">
+        <h3>สินค้าอื่นๆ</h3>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-3 col-md-6 col-sm-1">
+        <div class="warp-card myshadow">
+          <h4 class="text-center">ชื่อต้นซากุระ</h4>
+          <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+          <div class="clearfix mt-3">
+            <div class="float-start">
+              <h3 class="mt-2 ms-3">125 ฿</h3>
+            </div>
+            <div class="float-end">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+              >
+                ดูรายละเอียด
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="col-md-3 ms-4 d-flex align-items-start flex-column">
-        <h2>ชื่อ : {{ product.title }}</h2>
-        <h3>ราคา {{ product.price }} ฿</h3>
-        <h5>รายละเอียด</h5>
-        <p>
-          {{ product.description }}
-        </p>
-        <h5>การบำรุงรักษา</h5>
-        <p>
-          {{ product.howto_description }}
-        </p>
-        <h5>รายละเอียดเพิ่มเติม</h5>
-        <ul>
-          <li>ชื่อร้าน</li>
-          <li>พันธ์ไม้ : {{ product.category.name }}</li>
-        </ul>
-        <div class="mt-auto">
-          <button type="button" class="btn btn-primary">
-            <i class="fa-solid fa-cart-shopping"></i> เพิ่มลงตระกร้ารถเข็น
-          </button>
-          <button type="button" class="btn btn-success">ซื้อเลย</button>
+      <div class="col-lg-3 col-md-6 col-sm-1">
+        <div class="warp-card myshadow">
+          <h4 class="text-center">ชื่อต้นซากุระ</h4>
+          <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+          <div class="clearfix mt-3">
+            <div class="float-start">
+              <h3 class="mt-2 ms-3">125 ฿</h3>
+            </div>
+            <div class="float-end">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+              >
+                ดูรายละเอียด
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-1">
+        <div class="warp-card myshadow">
+          <h4 class="text-center">ชื่อต้นซากุระ</h4>
+          <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+          <div class="clearfix mt-3">
+            <div class="float-start">
+              <h3 class="mt-2 ms-3">125 ฿</h3>
+            </div>
+            <div class="float-end">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+              >
+                ดูรายละเอียด
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-1">
+        <div class="warp-card myshadow">
+          <h4 class="text-center">ชื่อต้นซากุระ</h4>
+          <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+          <div class="clearfix mt-3">
+            <div class="float-start">
+              <h3 class="mt-2 ms-3">125 ฿</h3>
+            </div>
+            <div class="float-end">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+              >
+                ดูรายละเอียด
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="mt-4"><hr /></div>
-    <div class="mt-4"></div>
-    <h3>สินค้าอื่นๆ</h3>
-
-    <carousel :per-page="4">
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-
-      <slide>
-        <div class="product-card">
-          <img :src="product.image_url" class="myother" />
-        </div>
-        <div class="clearfix">
-          <div class="float-end">
-            <button type="button" class="btn btn-outline-success btn-sm">
-              ดูรายละเอียด
-            </button>
-          </div>
-        </div>
-      </slide>
-    </carousel>
   </div>
+  <!-- OLD -->
+  <!-- <div class="row">
+      <div class="col-7">
+        <img :src="product.image_url" class="myimg" />
+        <carousel :perPage="3">
+          <slide> <img src="/images/img2.jpeg" class="myimg-sm" /> </slide>
+          <slide> <img src="/images/img2.jpeg" class="myimg-sm" /> </slide>
+          <slide> <img src="/images/img2.jpeg" class="myimg-sm" /> </slide>
+        </carousel>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-4">
+        <table style="height: 28rem">
+          <tbody>
+            <tr>
+              <td class="align-middle ms-5">
+                <h6 class="mt-5" style="color: grey">ชื่อร้าน :</h6>
+                <h3 class="mt-3">{{ product.title }}</h3>
+                <h6 style="color: grey">พันธ์ไม้</h6>
+                <p>{{ product.category.name }}</p>
+                <h6 style="color: grey">รายละเอียด</h6>
+                <p>
+                  {{ product.description }}
+                </p>
+                <h1 class="t-red mt-5">ราคา {{ product.price }} ฿</h1>
+
+                <div
+                  class="d-flex align-items-start flex-column bd-highlight mb-3"
+                  style="height: 200px"
+                >
+                  <div class="mb-auto p-2 bd-highlight"></div>
+                  <div class="p-2 bd-highlight"></div>
+                  <div class="p-2 bd-highlight">
+                    <button type="button" class="btn btn-outline-dark btn-lg">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      เพิ่มลงตระกร้ารถเข็น
+                    </button>
+                    <button type="button" class="btn btn-outline-dark btn-lg">
+                      ซื้อเลย
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
@@ -149,33 +255,25 @@ export default {
 };
 </script>
 <style>
-.myimg {
+.mbtn:hover {
+  background: green;
+  border-color: green;
+}
+.text-gray {
+  color: gray;
+}
+.mydetailimg {
   width: 100%;
-  height: 800px;
+  height: 700px;
   object-fit: cover;
 }
-.myother {
+.warp-card {
+  background-color: white;
+  padding: 10px 0px;
+}
+.myimgdt {
   width: 100%;
-  height: 200px;
+  height: 100px;
   object-fit: cover;
-}
-.product-card-detail {
-  background-color: #fff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  margin: 10px auto;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.product-card-detail img {
-  transition: all linear 0.25s;
-}
-
-.product-card-detail:hover img {
-  transform: scale(1.1);
-  filter: grayscale(30%) blur(1px) !important;
 }
 </style>

@@ -11,38 +11,32 @@
       <!-- banner -->
       <!-- Section-->
 
-      <div
-        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-      >
-        <div class="p-3" v-for="(item, i) in recommends" :key="i">
-          <div class="product-card">
+      <div>
+        <h1 class="text-center mt-5">สินค้าของฉัน</h1>
+        <div
+          class="row gx-6 gx-lg-6 row-cols-6 row-cols-md-6 row-cols-xl-6 justify-content-center mt-5"
+        >
+          <div
+            v-for="(item, i) in recommends"
+            :key="i"
+            class="card mx-auto col-md-3 col-10"
+          >
             <img
+              class="mx-auto img-thumbnail product-img"
               :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
             />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+            <div class="card-body text-center mx-auto">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text">{{ item.price }}</p>
             </div>
+
+            <button
+              @click="showAlert"
+              type="button"
+              class="btn btn-outline-warning"
+            >
+              แก้ไข
+            </button>
           </div>
         </div>
       </div>

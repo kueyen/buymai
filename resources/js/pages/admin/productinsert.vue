@@ -55,7 +55,7 @@
             <div class="row justify-content-end mt-3">
               <div class="form-group col-sm-6">
                 <button type="submit" class="btn-block btn-primary">
-                  Request a demo
+                  เพิ่มรายการสินค้า
                 </button>
               </div>
             </div>

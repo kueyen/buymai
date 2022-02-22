@@ -1,12 +1,12 @@
-@import 'variables';
+@import "variables";
 
-@import '~bootstrap/scss/bootstrap';
-@import '~sweetalert2/dist/sweetalert2';
-@import '~@fortawesome/fontawesome-svg-core/styles';
+@import "~bootstrap/scss/bootstrap";
+@import "~sweetalert2/dist/sweetalert2";
+@import "~@fortawesome/fontawesome-svg-core/styles";
 
-@import 'elements/card';
-@import 'elements/navbar';
-@import 'elements/buttons';
-@import 'elements/transitions';
+@import "elements/card";
+@import "elements/navbar";
+@import "elements/buttons";
+@import "elements/transitions";
 
-@import 'components/server-error';
+@import "components/server-error";

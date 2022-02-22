@@ -1,274 +1,847 @@
 <template>
   <div class="container">
-    <!-- banner -->
-    <!-- Section-->
-    <div>
-      <div class="clearfix">
-        <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
-        </div>
-        <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
-        </div>
-      </div>
-      <carousel :per-page="4" class="mt-4">
-        <slide v-for="(item, i) in recommends" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
-            </div>
-          </div>
+    <div class="container">
+      <!-- banner -->
+      <carousel
+        class="text-center border p-3 myshadow"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 3],
+          [768, 4],
+          [960, 6],
+        ]"
+      >
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ทั้งหมด
+          </button>
+        </slide>
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ไม้ด่าง
+          </button>
+        </slide>
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ไม้ประดับ
+          </button>
+        </slide>
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ไม้ฟอกอากาศ
+          </button>
+        </slide>
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ไม้มงคล
+          </button>
+        </slide>
+        <slide>
+          <button type="button" class="btn btn btn-outline-dark">
+            ปุ๋ยและอื่นๆ
+          </button>
         </slide>
       </carousel>
-    </div>
-
-    <div>
-      <div class="clearfix">
-        <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
+        <div class="col-lg-6 col-md-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <carousel :per-page="4" class="mt-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Section-->
+      <!-- <h1 class="mt-5">แนะนำ</h1>
+      <p class="text-gray mb-5">คำอธิบาย</p>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 mt-4 myimgbox">
+          <div class="warp-card myshadow">
+            <h4 class="text-center">ชื่อต้นซากุระ</h4>
+            <img src="/images/img4.jpeg" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h3 class="mt-2 ms-3">125 ฿</h3>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                >
+                  ดูรายละเอียด
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-4 myimgbox">
+          <div
+            class="warp-card myshadow"
+            v-for="(item, i) in is_recommend"
+            :key="i"
+          >
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <!-- Menu -->
+    <div class="container">
+      <div class="clearfix mt-5">
+        <div class="float-start">
+          <h1>ไม้ประดับ</h1>
+          <p class="text-gray mb-5">คำอธิบาย</p>
+        </div>
+        <div class="float-end">
+          <h5>ดูทั้งหมด</h5>
+        </div>
+      </div>
+      <carousel
+        class="text-center"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 1],
+          [768, 2],
+          [960, 4],
+        ]"
+      >
         <slide v-for="(item, i) in spotted.items" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+          <div class="warp-card myshadow ms-2 me-2">
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
 
-    <div>
-      <div class="clearfix">
+    <div class="container">
+      <div class="clearfix mt-5">
         <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
+          <h1>ไม้ฟอกอากาศ</h1>
+          <p class="text-gray mb-5">คำอธิบาย</p>
         </div>
         <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
+          <h5>ดูทั้งหมด</h5>
         </div>
       </div>
-      <carousel :per-page="4" class="mt-4">
+      <carousel
+        class="text-center"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 1],
+          [768, 2],
+          [960, 4],
+        ]"
+      >
         <slide v-for="(item, i) in airpurifier.items" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+          <div class="warp-card myshadow ms-2 me-2">
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
 
-    <div>
-      <div class="clearfix">
+    <div class="container">
+      <div class="clearfix mt-5">
         <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
+          <h1>ไม้มงคล</h1>
+          <p class="text-gray mb-5">คำอธิบาย</p>
         </div>
         <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
+          <h5>ดูทั้งหมด</h5>
         </div>
       </div>
-      <carousel :per-page="4" class="mt-4">
+      <carousel
+        class="text-center"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 1],
+          [768, 2],
+          [960, 4],
+        ]"
+      >
         <slide v-for="(item, i) in ornamental.items" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+          <div class="warp-card myshadow ms-2 me-2">
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
 
-    <div>
-      <div class="clearfix">
+    <div class="container">
+      <div class="clearfix mt-5">
         <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
+          <h1>ไม้มงคล</h1>
+          <p class="text-gray mb-5">คำอธิบาย</p>
         </div>
         <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
+          <h5>ดูทั้งหมด</h5>
         </div>
       </div>
-      <carousel :per-page="4" class="mt-4">
+      <carousel
+        class="text-center"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 1],
+          [768, 2],
+          [960, 4],
+        ]"
+      >
         <slide v-for="(item, i) in auspicious.items" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+          <div class="warp-card myshadow ms-2 me-2">
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
 
-    <div>
-      <div class="clearfix">
+    <div class="container">
+      <div class="clearfix mt-5">
         <div class="float-start">
-          <h2>ต้นไม้ด่าง</h2>
+          <h1>ปุ๋ยและอุปการณ์ดูแลต้นไม้</h1>
+          <p class="text-gray mb-5">คำอธิบาย</p>
         </div>
         <div class="float-end">
-          <a href="#" class="clearlink">ดูทั้งหมด</a>
+          <h5>ดูทั้งหมด</h5>
         </div>
       </div>
-      <carousel :per-page="4" class="mt-4">
+      <carousel
+        class="text-center"
+        :paginationEnabled="false"
+        :perPageCustom="[
+          [480, 1],
+          [768, 2],
+          [960, 4],
+        ]"
+      >
         <slide v-for="(item, i) in fertilizer.items" :key="i">
-          <div class="product-card">
-            <img
-              :src="item.image_url"
-              class="img img-responsive"
-              object-fit="cover"
-              height="400"
-              width="100%"
-            />
-            <div class="product-name">{{ item.title }}</div>
-            <div class="price t-red">{{ item.price }} ฿</div>
-            <div class="button-card">
-              <button
-                @click="showAlert"
-                type="button"
-                class="btn btn-dark b-red btn-sm"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
-              <router-link
-                class="btn btn-dark b-blue btn-sm"
-                :to="{
-                  name: 'products.detail',
-                  params: { id: item.id },
-                }"
-              >
-                ดูรายละเอียด
-              </router-link>
+          <div class="warp-card myshadow ms-2 me-2">
+            <h4 class="text-center">{{ item.title }}</h4>
+            <img :src="item.image_url" class="img-fluid myimghead" />
+            <div class="clearfix mt-3">
+              <div class="float-start">
+                <h4 class="mt-2 ms-3">฿{{ item.price }}</h4>
+              </div>
+              <div class="float-end">
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-sm mybtnshadow"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+                <router-link
+                  class="btn btn-outline-dark btn-sm mybtnshadow me-3"
+                  :to="{
+                    name: 'products.detail',
+                    params: { id: item.id },
+                  }"
+                >
+                  ดูรายละเอียด
+                </router-link>
+              </div>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
   </div>
+  <!-- OLD -->
+  <!-- <carousel :per-page="1">
+      <slide v-for="(item, i) in recommends" :key="i">
+        <div class="row" style="height: 28rem">
+          <div class="col-xl-6 col-md-6 col-sm-12">
+            <table style="height: 28rem">
+              <tbody>
+                <tr>
+                  <td class="align-middle ms-5">
+                    <h1 class="ms-5">เป็นเจ้าของต้น{{ item.title }}</h1>
+                    <div class="row">
+                      <div class="col">
+                        <h1 class="t-red">ได้แล้ววันนี้</h1>
+                      </div>
+                      <div class="col">
+                       
+                      </div>
+                    </div>
+
+                    <div class="mt-5">
+                      <router-link
+                        class="btn btn-dark btn-lg ms-5"
+                        :to="{
+                          name: 'products.detail',
+                          params: { id: item.id },
+                        }"
+                      >
+                        ดูรายละเอียด
+                      </router-link>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xl-6 col-md-6 col-sm-12">
+            <table style="height: 28rem">
+              <tbody>
+                <tr>
+                  <td class="align-middle ms-5">
+                    <img
+                      :src="item.image_url"
+                      class="img img-responsive"
+                      object-fit="cover"
+                      height="height: 28rem"
+                      width="100%"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </slide>
+    </carousel> -->
+  <!-- <div class="row text-center mt-5">
+      <div class="col">ทั้งหมด</div>
+      <div class="col">ต้นไม้ด่าง</div>
+      <div class="col">ต้นไม้ประดับ</div>
+      <div class="col">ต้นไม้ฟอกอากาศ</div>
+      <div class="col">ต้นไม้ฟอกอากาศ</div>
+      <div class="col">ต้นไม้มงคล</div>
+    </div> -->
+  <!-- <div>
+      <h1 class="text-center mt-5">สินค้าทั้งหมด</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 mt-5 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in recommends"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center mt-5">ต้นไม้ด่าง</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in spotted.items"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center mt-5">ต้นไม้ประดับ</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in airpurifier.items"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center mt-5">ต้นไม้ฟอกอากาศ</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in ornamental.items"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center mt-5">ต้นไม้มงคล</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in auspicious.items"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-center mt-5">ปุ๋ยและอุปการณ์ดูแลต้นไม้</h1>
+      <div
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+      >
+        <div
+          v-for="(item, i) in fertilizer.items"
+          :key="i"
+          class="card mx-auto col-md-3 col-10"
+        >
+          <img
+            class="mx-auto img-thumbnail product-img"
+            :src="item.image_url"
+          />
+          <div class="card-body text-center mx-auto">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+          </div>
+          <div class="clearfix">
+            <div class="float-start">
+              <button
+                @click="showAlert"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+            <div class="float-end">
+              <router-link
+                class="btn btn-outline-dark mgt"
+                :to="{
+                  name: 'products.detail',
+                  params: { id: item.id },
+                }"
+              >
+                ดูรายละเอียด
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 </template>
+
 <script>
 import { mapActions, mapGetters } from "vuex";
+
 export default {
   // data: () => ({
   //   item: [
@@ -328,7 +901,19 @@ export default {
     }),
     showAlert() {
       // Use sweetalert2
-      this.$swal("Hello Vue world!!!");
+      this.$swal({
+        title: "คุณต้องการดำเนินการ?",
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: "เพิ่มลงตระกร้าสินค้า",
+        denyButtonText: `ไปหน้าชำระเงิน`,
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
     },
   },
   async created() {
@@ -347,101 +932,78 @@ export default {
 };
 </script>
 <style>
-.product-card {
-  max-width: 300px;
-  background-color: #fff;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-  background-position: center;
-  overflow: hidden;
-  position: relative;
-  margin: 10px auto;
-  cursor: pointer;
-  border-radius: 10px;
+.text-gray {
+  color: gray;
+}
+.warp-card {
+  background-color: white;
+  padding: 10px 0px;
 }
 
-.product-card img {
-  transition: all linear 0.25s;
+.myimghead {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
-.product-card .product-name {
-  position: absolute;
-  left: 30px;
-  bottom: 105px !important;
-  font-size: 30px;
-  color: #fff;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  transition: all linear 0.25s;
+.myimgbox:hover .btn {
+  display: inline-block;
 }
 
-.product-card .button-card {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  color: #fff;
-  transition: all linear 0.25s;
+.myshadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.mybtnshadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.price {
-  font-size: 20px !important;
+.rbtn {
+  padding: 5px 15px;
+  border-radius: 5px 25px !important;
 }
-
-.product-card .price {
-  position: absolute;
-  bottom: 80px;
-  left: 30px;
-  color: #fff;
-  font-size: 30px;
-  transition: all linear 0.25s;
+/* .product-img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
 }
-
-.product-card .button-card {
-  margin: 5px;
-}
-
-.product-card:hover img {
-  transform: scale(1.1);
-  filter: grayscale(30%) blur(1px) !important;
-}
-
-.product-card:hover .product-name {
-  bottom: 110px !important;
-}
-
-.product-card:hover .price {
-  bottom: 90px;
-}
-
-.product-card:hover .button-card {
-  right: 40px;
-}
-
-.nopadding {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.b-red:hover {
-  border-color: red !important;
-  background-color: red !important;
-  color: white;
-}
-
-.b-blue:hover {
-  border-color: #86b6c9 !important;
-  background-color: #86b6c9 !important;
-  color: white;
-}
-
 .t-red {
   color: red !important;
 }
-
-.clearlink {
-  color: black;
+.sale {
+  flex-direction: row-reverse;
 }
 
-.clearlink:hover {
-  color: grey;
+.card {
+  width: fit-content;
 }
+
+.card-body {
+  width: fit-content;
+}
+
+.img-thumbnail {
+  border: none;
+}
+
+.card {
+  margin-top: 0px !important;
+
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.card-text {
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.mgt {
+  margin-top: 7px;
+} */
 </style>

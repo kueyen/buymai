@@ -22,12 +22,14 @@ $appCss = mix('dist/css/app.css');
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  
 </head>
 <body style="font-family: 'Prompt', sans-serif;">
   <div id="app"></div>
 
   <script>
     window.config = @json($config);
+
   </script>
 
   <script src="{{ (str_starts_with($appJs, '//') ? 'http:' : '').$appJs }}"></script>

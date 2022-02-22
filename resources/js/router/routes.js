@@ -39,6 +39,16 @@ export default [
     component: page("shop/productdetail.vue"),
   },
   {
+    path: "/cart",
+    name: "cart",
+    component: page("shop/cart.vue"),
+  },
+  {
+    path: "/payment",
+    name: "payment",
+    component: page("shop/payment.vue"),
+  },
+  {
     path: "/admin",
     name: " admindashboard",
     component: page("admin/admindashboard.vue"),
